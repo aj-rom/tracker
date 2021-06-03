@@ -16,6 +16,7 @@ class AddBar extends Component {
     }
 
     handleChange = e => {
+        if (this.state.item.length > 25 && e.target.value.length > 25) return
         this.setState({ item: e.target.value })
     }
 
@@ -28,7 +29,7 @@ class AddBar extends Component {
     render() {
         return (
             <form className="add-form" onSubmit={this.handleSubmit}>
-                <TextField type='text' id='item'
+                <TextField type='text' id='item' required='true'
                            label='Item Name' value={this.state.item}
                            placeholder='Add Your Item Here' onChange={this.handleChange}
                 />
