@@ -1,7 +1,7 @@
 import React, { Component, lazy, Suspense } from 'react'
 import { connect } from 'react-redux'
 import '../style/item.css'
-const { removeItem, increaseCount, decreaseCount } = lazy( () => import('../actions/item'))
+import { removeItem, increaseCount, decreaseCount } from '../actions/item'
 const Card = lazy(() => import('@material-ui/core/Card'))
 const Button = lazy(() => import('@material-ui/core/Button'))
 const Typography = lazy(() => import('@material-ui/core/Typography'))
