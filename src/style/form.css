@@ -1,0 +1,10 @@
+.add-form {
+    border: 0;
+    margin: 0;
+    display: inline-flex;
+    padding: 0;
+    position: relative;
+    flex-direction: column;
+    vertical-align: top;
+    min-width: 300px;
+}
