@@ -1,12 +1,16 @@
-import React from 'react'
+import React, { lazy, Suspense } from 'react'
 import Container from '@material-ui/core/Container'
-import ItemList from "../components/ItemList";
 import {connect} from "react-redux";
 
+const ItemList = lazy(() => import("../components/ItemList"))
+
+const fallback = () => <p>Loading...</p>
 const Body = ({ items }) => {
     return (
         <Container maxWidth="lg">
-            <ItemList items={items}/>
+            <Suspense fallback={fallback}>
+                <ItemList items={items}/>
+            </Suspense>
         </Container>
     )
 }

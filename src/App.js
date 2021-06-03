@@ -1,8 +1,10 @@
-import React, { Component } from 'react'
+import React, { Component, lazy, Suspense } from 'react'
 import './App.css';
 import { connect } from 'react-redux'
-import Body from './containers/Body'
-import Header from "./containers/Header";
+const Body = lazy(() => import('./containers/Body'))
+const Header = lazy(() => import('./containers/Header'))
+
+const fallBack = () => <p>Loading...</p>
 
 class App extends Component {
 
@@ -12,10 +14,12 @@ class App extends Component {
 
     render() {
         return (
-            <React.Fragment>
-                <Header/>
-                <Body items={this.props.items}/>
-            </React.Fragment>
+            <Suspense fallback={fallBack}>
+                <React.Fragment>
+                    <Header/>
+                    <Body items={this.props.items}/>
+                </React.Fragment>
+            </Suspense>
         )
     }
 }

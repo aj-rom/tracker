@@ -1,5 +1,5 @@
-import React from 'react'
-import Item from './Item'
+import React, { lazy, Suspense} from 'react'
+const Item = lazy(() => import('./Item'))
 
 const ItemList = ({ items }) => {
 
@@ -7,9 +7,15 @@ const ItemList = ({ items }) => {
         return items.map((e, idx) => <Item key={idx} id={idx} item={e.item} count={e.count}/>)
     }
 
+    function fallback() {
+        return <p>Loading...</p>
+    }
+
     return (
         <div className='item-list'>
-            {renderItems()}
+            <Suspense fallback={fallback}>
+                {renderItems()}
+            </Suspense>
         </div>
     )
 }

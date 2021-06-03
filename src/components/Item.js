@@ -1,11 +1,11 @@
-import React, { Component } from 'react'
+import React, { Component, lazy, Suspense } from 'react'
 import { connect } from 'react-redux'
-import { removeItem, increaseCount, decreaseCount } from "../actions/item";
-import Card from '@material-ui/core/Card';
-import Button from '@material-ui/core/Button';
-import Typography from '@material-ui/core/Typography'
-import ButtonGroup from '@material-ui/core/ButtonGroup'
 import '../style/item.css'
+const { removeItem, increaseCount, decreaseCount } = lazy( () => import('../actions/item'))
+const Card = lazy(() => import('@material-ui/core/Card'))
+const Button = lazy(() => import('@material-ui/core/Button'))
+const Typography = lazy(() => import('@material-ui/core/Typography'))
+const ButtonGroup = lazy(() => import('@material-ui/core/ButtonGroup'))
 
 class Item extends Component {
 
@@ -21,18 +21,22 @@ class Item extends Component {
         this.props.decreaseCount(this.props)
     }
 
+    fallback = () => <p>Loading...</p>
+
 
     render() {
         return (
-            <Card className='item-card' id={this.props.id}>
-                <Typography variant='' className='item-title'>{this.props.item}</Typography>
-                <Typography variant='subtitle1' className='clicker'>{this.props.count} times</Typography>
-                <ButtonGroup className='action-row'>
-                    <Button onClick={this.handleIncrease} className='item-button'>+</Button>
-                    <Button onClick={this.handleDecrease} className='item-button'>-</Button>
-                    <Button onClick={this.handleRemove} className='item-button'>Remove</Button>
-                </ButtonGroup>
-            </Card>
+            <Suspense fallback={this.fallback}>
+                <Card className='item-card' id={this.props.id}>
+                    <Typography variant='' className='item-title'>{this.props.item}</Typography>
+                    <Typography variant='subtitle1' className='clicker'>{this.props.count} times</Typography>
+                    <ButtonGroup className='action-row'>
+                        <Button onClick={this.handleIncrease} className='item-button'>+</Button>
+                        <Button onClick={this.handleDecrease} className='item-button'>-</Button>
+                        <Button onClick={this.handleRemove} className='item-button'>Remove</Button>
+                    </ButtonGroup>
+                </Card>
+            </Suspense>
         )
     }
 }
