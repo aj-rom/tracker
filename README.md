@@ -10,7 +10,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 4. Begin interacting with the application.
 
 ## Contributing
-Contributions are fully encouraged **especially** for CSS styling.
+Contributions are fully encouraged **especially** for CSS styling, but please adhere to the [Contributing Guidlines](/CODE_OF_CONDUCT.md).
 
 ## License
-This project is open-sourced under under the [MIT License](/LICENSE)
+This project is open-sourced under under the [MIT License](/LICENSE.md) feel free to do as you please with this codebase.
