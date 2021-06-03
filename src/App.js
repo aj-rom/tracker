@@ -1,25 +1,24 @@
-import logo from './logo.svg';
+import React, { Component } from 'react'
 import './App.css';
+import AddBar from "./components/AddBar";
+import { connect } from 'react-redux'
+import Body from './containers/Body'
+import Header from "./containers/Header";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+
+    shouldComponentUpdate(nextProps, nextState, nextContext) {
+        return nextProps.items !== this.props.items
+    }
+
+    render() {
+        return (
+            <React.Fragment>
+                <Header/>
+                <Body items={this.props.items}/>
+            </React.Fragment>
+        )
+    }
 }
 
-export default App;
+export default connect(state => ({ items: state.items}))(App)
