@@ -29,7 +29,8 @@ class AddBar extends Component {
     render() {
         return (
             <form className="add-form" onSubmit={this.handleSubmit}>
-                <TextField type='text' id='item' required='true'
+                <TextField type='text' id='item' required={true}
+                           autoComplete='off'
                            label='Item Name' value={this.state.item}
                            placeholder='Add Your Item Here' onChange={this.handleChange}
                 />
