@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import './App.css';
-import AddBar from "./components/AddBar";
 import { connect } from 'react-redux'
 import Body from './containers/Body'
 import Header from "./containers/Header";
