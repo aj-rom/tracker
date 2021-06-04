@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { addItem } from "../actions/item";
+import '../style/form.css'
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button'
-import '../style/form.css'
 
 class AddBar extends Component {
 
