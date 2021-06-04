@@ -1,1 +1,0 @@
-{"version":3,"sources":["webpack://src/style/add-bar.css"],"names":[],"mappings":"AAAA,SACI,iBAAkB,CAClB,wBAAqB,CAArB,oBACJ","file":"7.04bd606f.chunk.css","sourcesContent":[".add-bar {\r\n    text-align: center;\r\n    margin-block-end: 5px;\r\n}"]}
