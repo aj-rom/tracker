@@ -14,6 +14,12 @@
 
 .item-button {
     min-width: 75px;
+    color: white;
+    background-color: var(--primary);
+}
+
+.item-button:hover {
+    background-color: var(--p-light);
 }
 
 .clicker {

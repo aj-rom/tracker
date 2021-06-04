@@ -2,9 +2,21 @@
     border: 0;
     margin: 0;
     display: inline-flex;
-    padding: 0;
     position: relative;
     flex-direction: column;
     vertical-align: top;
     min-width: 300px;
+    background-color: white;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+.submit {
+    margin-top: 5px;
+    color: white;
+    background-color: var(--primary);
+}
+
+.submit:hover {
+    background-color: var(--p-light);
 }
