@@ -5,7 +5,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ## Getting Started
 
 1. Clone this repository and navigate to the folder you cloned it into.
-2. Run: `npm install && npm start`.
+2. Run: `yarn install && npm start`.
 3. Navigate to [http://localhost:3000](http://localhost:3000).
 4. Begin interacting with the application.
 
