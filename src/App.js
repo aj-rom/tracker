@@ -15,6 +15,7 @@ class App extends Component {
     render() {
         return (
             <Suspense fallback={fallBack}>
+                <h1 className='title'>Tracker</h1>
                 <React.Fragment>
                     <Header/>
                     <Body items={this.props.items}/>
