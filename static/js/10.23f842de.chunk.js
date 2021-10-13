@@ -1,2 +1,0 @@
-(this.webpackJsonptracker=this.webpackJsonptracker||[]).push([[10],{101:function(t,e,n){"use strict";n.r(e);var c=n(0),i=n(1),r=Object(c.lazy)((function(){return n.e(6).then(n.bind(null,64))}));e.default=function(t){var e=t.items;return Object(i.jsx)("div",{className:"item-list",children:Object(i.jsx)(c.Suspense,{fallback:function(){return Object(i.jsx)("p",{children:"Loading..."})},children:e.map((function(t,e){return Object(i.jsx)(r,{id:e,item:t.item,count:t.count},e)}))})})}}}]);
-//# sourceMappingURL=10.23f842de.chunk.js.map
